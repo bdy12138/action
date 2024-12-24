@@ -1,0 +1,37 @@
+name: Module Federation Release
+description: Module Federation Release Action
+runs:
+  using: "node16"
+  main: "dist/index.js"
+inputs:
+  type:
+    description: 'Action Type'
+    required: true
+    default: 'release'
+  version:
+    description: 'Release Version Type(canary, pre, latest, nightly, next, beta, modern-*)'
+    required: false
+    default: 'canary'
+  versionNumber:
+    description: 'Release Version Number(v1.0.0)'
+    required: false
+    default: ''
+  npmTag:
+    description: 'Custom Npm Tag'
+    required: false
+    default: ''
+  branch:
+    description: 'Release Branch(confirm release branch)'
+    required: false
+    default: 'main'
+  tools:
+    description: 'Release Tools'
+    required: false
+    default: 'changeset'
+  coreNpmName:
+    description: 'Core Npm name'
+    required: true
+    default: ''
+branding:
+  icon: "package"
+  color: "yellow"
